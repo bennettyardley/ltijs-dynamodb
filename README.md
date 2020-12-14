@@ -32,7 +32,7 @@ const lti = require('ltijs').Provider
 //Import the ltijs-dynamo plugin
 const Database = require('./ltijs-dyanmo')
 
-// Setup ltijs-dynamo using the same arguments as Sequelize's generic contructor
+// Setup ltijs-dynamo
 const db = new Database('[KEY]', '[SECRET]', '[REGION]')
 
 // Setup provider

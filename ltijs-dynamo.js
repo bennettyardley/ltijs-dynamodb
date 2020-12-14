@@ -217,7 +217,7 @@ class Database {
 
       //Update the document with the changes
       else {
-        await this.updateOne (result, collection, newerDocData)
+        await this.updateOne(result, collection, newerDocData)
         return true
       }
     }
@@ -295,7 +295,7 @@ class Database {
 
     //Modify document with changes
     else {
-      await this.updateOne (result, collection, newerDocData)
+      await this.updateOne(result, collection, newerDocData)
       return true
     }
   }
@@ -320,7 +320,6 @@ class Database {
     else if (collection === 'nonce') {try {await nonce.delete(query)} catch (e) {}}
     else if (collection === 'state') {try {await state.delete(query)} catch (e) {}}
     else throw new Error('MISSING_COLLECTION')
-    console.log('Done DELETE: ' + collection)
     return true
   }
 
@@ -366,6 +365,7 @@ class Database {
   async getResult(query, collection) {
     return new Promise(async (resolve, reject) => {
     if (collection === 'idtoken') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await idtoken.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -455,8 +455,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await idtoken.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -467,6 +468,7 @@ class Database {
       }
     }
     else if (collection === 'contexttoken') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await contexttoken.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -556,8 +558,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await contexttoken.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -568,6 +571,7 @@ class Database {
       }
     }
     else if (collection === 'platform') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await platform.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -657,8 +661,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await platform.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -669,6 +674,7 @@ class Database {
       }
     }
     else if (collection === 'platformStatus') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await platformStatus.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -758,8 +764,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await platformStatus.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -770,6 +777,7 @@ class Database {
       }
     }
     else if (collection === 'privatekey') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await privatekey.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -859,8 +867,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await privatekey.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -871,6 +880,7 @@ class Database {
       }
     }
     else if (collection === 'publickey') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await publickey.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -960,7 +970,8 @@ class Database {
           }
         })
       }
-      else if (!query) {
+      }
+      else {
         await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
@@ -972,6 +983,7 @@ class Database {
       }
     }
     else if (collection === 'accesstoken') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await accesstoken.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -1061,8 +1073,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await accesstoken.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -1073,6 +1086,7 @@ class Database {
       }
     }
     else if (collection === 'nonce') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await nonce.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -1162,8 +1176,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await nonce.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -1174,6 +1189,7 @@ class Database {
       }
     }
     else if (collection === 'state') {
+      if (query) {
       if (Object.keys(query).length === 1) {
         await state.scan(Object.entries(query)[0][0])
         .eq(Object.entries(query)[0][1])
@@ -1263,8 +1279,9 @@ class Database {
           }
         })
       }
-      else if (!query) {
-        await state.scan()
+      }
+      else {
+        await publickey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])

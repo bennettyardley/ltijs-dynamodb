@@ -1,10 +1,6 @@
 # ltijs-dynamodb
 Ltijs DynamoDB plugin
 
-## Notes
-
-* Currently in development, basic tests have passed, but not ready for production
-
 ## Installation
 
 * Run `npm install dynamoose` to install dependencies

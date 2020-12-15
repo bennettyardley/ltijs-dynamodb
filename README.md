@@ -6,6 +6,12 @@ Ltijs DynamoDB plugin
 * Run `npm install dynamoose` to install dependencies
 * Add `ltijs-dynamo.js` to your root directory
 * Create a models folder with `ltijsModels.js` in the folder
+* Before your first run you will need to setup your tables in DynamoDB
+
+### Setup Tables
+1. Configure `ltijs-dynamodb-setup.js` (lines 5,6,7) with your [AWS Key/Region](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html) 
+2. Run `node ltijs-dynamodb-setup.js` to setup the table
+3. After the script has finished your tables should be added to Dynamo
 
 ## Usage
 

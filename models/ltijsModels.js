@@ -42,16 +42,16 @@ const contextTokenSchema = new Schema({
   },
   path: String,
   targetLinkUri: String,
-  context: String, //obj
-  resource: String, //obj
-  custom: String, //obj
-  launchPresentation: String, //obj
+  context: String, 
+  resource: String, 
+  custom: String, 
+  launchPresentation: String, 
   messageType: String,
   version: String,
-  deepLinkingSettings: String, //obj
-  lis: String, //obj
-  endpoint: String, //obj
-  namesRoles: String, //obj
+  deepLinkingSettings: String, 
+  lis: String, 
+  endpoint: String, 
+  namesRoles: String, 
   createdAt: { type: Date, default: Date.now() }
 })
 

@@ -117,7 +117,7 @@ const stateSchema = new Schema({
     type: String,
     hashKey: true
   },
-  query: Map,
+  query: String,
   createdAt: { type: Date, default: Date.now() }
 })
 

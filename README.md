@@ -18,6 +18,7 @@ Ltijs DynamoDB plugin
 
 3. Set LTI database plugin
 
+
 ### Example
 ```
 const path = require('path')
@@ -25,16 +26,16 @@ const path = require('path')
 // Require Provider
 const lti = require('ltijs').Provider
 
-//Import the ltijs-dynamo plugin
+// (1) Import the ltijs-dynamo plugin
 const Database = require('./ltijs-dyanmo')
 
-// Setup ltijs-dynamo
+// (2) Configure ltijs-dynamo
 const db = new Database('[KEY]', '[SECRET]', '[REGION]')
 
 // Setup provider
 lti.setup('LTIKEY', // Key used to sign cookies and tokens
   {
-    plugin: db // Passing db object to plugin field
+    plugin: db // (3) Passing db object to plugin field
   },
   { // Options
     appRoute: '/', loginRoute: '/login', // Optionally, specify some of the reserved routes

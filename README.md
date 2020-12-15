@@ -11,7 +11,7 @@ Ltijs DynamoDB plugin
 
 1. Import ltijs-dynamo
 
-2. Configure plugin 
+2. [Configure plugin](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html)
  * key - AWS Access Key
  * secret - AWS Access Secret Key.
  * region - AWS Region.

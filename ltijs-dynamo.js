@@ -457,7 +457,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await idtoken.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -560,7 +560,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await contexttoken.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -663,7 +663,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await platform.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -766,7 +766,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await platformStatus.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -869,7 +869,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await privatekey.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -1075,7 +1075,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await accesstoken.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -1178,7 +1178,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await nonce.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])
@@ -1281,7 +1281,7 @@ class Database {
       }
       }
       else {
-        await publickey.scan()
+        await state.scan()
         .exec(function (err, data) {
           if (!data) {
             resolve ([])

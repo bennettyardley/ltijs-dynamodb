@@ -1373,7 +1373,7 @@ class Database {
             }
           }
         }
-        await publickey.update(key, newerMod)
+        await publickey.update(key, newMod)
       }
       else if (collection === 'accesstoken') {
         let key = {}

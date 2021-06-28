@@ -33,7 +33,7 @@ const path = require('path')
 const lti = require('ltijs').Provider
 
 // (1) Import the ltijs-dynamo plugin
-const Database = require('./ltijs-dyanmo')
+const Database = require('./ltijs-dynamo')
 
 // (2) Configure ltijs-dynamo
 const db = new Database('[KEY]', '[SECRET]', '[REGION]')

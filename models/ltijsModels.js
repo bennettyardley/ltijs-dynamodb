@@ -68,7 +68,8 @@ const platformSchema = new Schema({
   authEndpoint: String,
   accesstokenEndpoint: String,
   kid: String,
-  authConfig: String
+  authConfig: String,
+  authorizationServer: String
 })
 
 const platformStatusSchema = new Schema({
